@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="./styles/css/main.css">
+</head>
+<body>
+    <div class="wrapper">
+        <main class="main">
+            <div class="header">
+                <div class="header-wrapper">
+                    <div class="left-block">
+                        <div class="left-block__droptext">
+                            <p class="left-block__droptext-text">{{ searchType }}</p>
+                            <img src="./img/arrow-down.svg" alt="">
+                            <ul class="left-block__droptext-block">
+                                <li @click='toggleSearchType'>ID ВЫВОДА</li>
+                                <li @click='toggleSearchType'>USER ID</li>
+                                <li @click='toggleSearchType'>КОШЕЛЁК</li>
+                            </ul>
+                        </div>
+                        <div class="left-block__input">
+                            <input type="text" v-model="search">
+                            <div class="icon-search">
+                                <img src="./img/search.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="right-block">
+                        <img src="./img/exit.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="content-wrapper">
+                <div class="content-wrapper__table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>ID ВЫВОДА</td>
+                                <td>ВАЛЮТА</td>
+                                <td>КОШЕЛЕК</td>
+                                <td>USER ID</td>
+                                <td>СУММА</td>
+                                <td>СТАТУС</td>
+                                <td>ДАТА</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr 
+                                is="tabel-row" 
+                                v-for="record in filterRecords" 
+                                :key=record[0] 
+                                v-bind:record="record"
+                            />
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="bottom-wrapper">
+                <div class="bottom-wrapper__info">
+                    <p>Показаны 10 из {{ records.length }} записей</p>
+                </div>
+                <div class="bottom-wrapper__pag">
+                    <div class="bottom-wrapper__pag-prev" @click='prevPage'>
+                        <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.81251 8.23954L6.70834 14.125C6.80518 14.2226 6.92039 14.3001 7.04732 14.353C7.17426 14.4058 7.31041 14.4331 7.44793 14.4331C7.58544 14.4331 7.72159 14.4058 7.84853 14.353C7.97546 14.3001 8.09067 14.2226 8.18751 14.125C8.38152 13.9298 8.49042 13.6658 8.49042 13.3906C8.49042 13.1154 8.38152 12.8514 8.18751 12.6562L3.03126 7.44787L8.18751 2.29162C8.38152 2.09645 8.49042 1.83244 8.49042 1.55725C8.49042 1.28205 8.38152 1.01804 8.18751 0.822872C8.09104 0.724447 7.97599 0.646145 7.84904 0.592503C7.72208 0.53886 7.58575 0.510945 7.44793 0.510373C7.31011 0.510945 7.17377 0.53886 7.04682 0.592502C6.91986 0.646145 6.80482 0.724447 6.70834 0.822872L0.81251 6.70829C0.706775 6.80583 0.622391 6.92422 0.564675 7.05599C0.50696 7.18776 0.477163 7.33006 0.477163 7.47391C0.477163 7.61777 0.50696 7.76006 0.564675 7.89183C0.622391 8.0236 0.706775 8.14199 0.81251 8.23954Z" fill="#B8B8B8"/>
+                        </svg>    
+                    </div>
+                    <div class="bottom-wrapper__pag-items">
+                        <div class="bottom-wrapper__pag-items__item" v-for="page in pageCount" :key=page>{{ page }}</div>
+                        <!-- <div class="bottom-wrapper__pag-items__item etc">...</div>
+                        <div class="bottom-wrapper__pag-items__item">10</div> -->
+                    </div>
+                    <div class="bottom-wrapper__pag-next" @click='nextPage'>
+                        <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.18751 8.23954L2.29168 14.125C2.19484 14.2226 2.07964 14.3001 1.9527 14.353C1.82576 14.4058 1.68961 14.4331 1.5521 14.4331C1.41459 14.4331 1.27843 14.4058 1.1515 14.353C1.02456 14.3001 0.909351 14.2226 0.812514 14.125C0.618503 13.9298 0.509605 13.6658 0.509605 13.3906C0.509605 13.1154 0.618503 12.8514 0.812514 12.6562L5.96876 7.44787L0.812513 2.29162C0.618502 2.09645 0.509604 1.83244 0.509604 1.55725C0.509604 1.28205 0.618502 1.01804 0.812513 0.822872C0.908987 0.724447 1.02403 0.646145 1.15099 0.592503C1.27794 0.53886 1.41428 0.510945 1.5521 0.510373C1.68992 0.510945 1.82625 0.53886 1.95321 0.592502C2.08016 0.646145 2.19521 0.724447 2.29168 0.822872L8.18751 6.70829C8.29325 6.80583 8.37763 6.92422 8.43535 7.05599C8.49306 7.18776 8.52286 7.33006 8.52286 7.47391C8.52286 7.61777 8.49306 7.76006 8.43535 7.89183C8.37763 8.0236 8.29325 8.14199 8.18751 8.23954Z" fill="#B8B8B8"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Vue JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/dropdownList.js"></script>
+</body>
+</html>

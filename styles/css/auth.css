@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  font-family: 'Gilroy', sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("/img/l-tree.svg") bottom left no-repeat, url("/img/r-tree.svg") bottom right no-repeat, white;
+}
+
+.wrapper .auth {
+  max-width: 951px;
+  width: 100%;
+  height: 527px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.04);
+  border-radius: 7px;
+}
+
+.wrapper .auth-block {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper .auth-block__header {
+  text-align: center;
+}
+
+.wrapper .auth-block__header h1 {
+  font-weight: bold;
+  font-size: 45px;
+}
+
+.wrapper .auth-block__content {
+  width: 611px;
+  margin: 0 auto;
+}
+
+.wrapper .auth-block__content__input:first-child {
+  margin-bottom: 28px;
+}
+
+.wrapper .auth-block__content__input-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.wrapper .auth-block__content__input-label small {
+  text-transform: uppercase;
+  margin-left: 5px;
+  font-family: 'Gilroy SemiBold';
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.wrapper .auth-block__content__input input {
+  width: 100%;
+  border: 2px solid #069C38;
+  box-sizing: border-box;
+  border-radius: 7px;
+  font-size: 20px;
+  padding: 13px 0 13px 26px;
+  outline: none;
+  color: #000;
+}
+
+.wrapper .auth-block__content__input input::placeholder {
+  color: #E4E4E4;
+}
+
+.wrapper .auth-block__content__input-wrapper {
+  position: relative;
+}
+
+.wrapper .auth-block__content__input-wrapper input {
+  padding-right: 45px;
+}
+
+.wrapper .auth-block__content__input-wrapper img {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  transform: translateY(-50%);
+}
+
+.wrapper .auth-block__content__button button {
+  cursor: pointer;
+  display: block;
+  margin: 47px auto 0 auto;
+  font-family: 'Gilroy SemiBold';
+  width: 233px;
+  height: 60px;
+  font-size: 25px;
+  text-transform: uppercase;
+  background: #069C38;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  font-weight: 600;
+}
