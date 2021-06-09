@@ -61,7 +61,7 @@
             </div>
             <div class="bottom-wrapper">
                 <div class="bottom-wrapper__info">
-                    <p>Показаны 10 из {{ records.length }} записей</p>
+                    <p>Показаны {{ paginationData.length }} из {{ records.length }} записей</p>
                 </div>
                 <div class="bottom-wrapper__pag">
                     <div class="bottom-wrapper__pag-prev" @click='prevPage'>
@@ -70,7 +70,13 @@
                         </svg>    
                     </div>
                     <div class="bottom-wrapper__pag-items">
-                        <div class="bottom-wrapper__pag-items__item" v-for="page in pageCount" :key=page>{{ page }}</div>
+                        <div 
+                            class="bottom-wrapper__pag-items__item" 
+                            @click="pageNumber = page - 1"
+                            :class="{ active: page - 1 === pageNumber }"
+                            v-for="page in pageCount" 
+                            :key="page"
+                        >{{ page }}</div>
                         <!-- <div class="bottom-wrapper__pag-items__item etc">...</div>
                         <div class="bottom-wrapper__pag-items__item">10</div> -->
                     </div>
