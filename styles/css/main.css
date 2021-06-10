@@ -180,7 +180,6 @@
 .wrapper .main .content-wrapper__table table tbody {
   display: grid;
   overflow-y: scroll;
-  overflow-x: hidden;
   max-height: 500px;
   min-width: 1045px;
 }
@@ -192,6 +191,7 @@
 
 .wrapper .main .content-wrapper__table table tbody::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
   background: #F5F5F5;
 }
 
@@ -351,6 +351,8 @@
 .wrapper .main .bottom-wrapper__pag-items {
   display: flex;
   margin-right: 10px;
+  max-width: 250px;
+  overflow-x: hidden;
 }
 
 .wrapper .main .bottom-wrapper__pag-items__item.active {
@@ -360,6 +362,10 @@
 
 .wrapper .main .bottom-wrapper__pag-items__item.active svg path {
   fill: #FFFFFF;
+}
+
+.wrapper .main .bottom-wrapper__pag-items .paggination-wrapper {
+  display: flex;
 }
 
 .wrapper .main .bottom-wrapper__pag-prev, .wrapper .main .bottom-wrapper__pag-items__item, .wrapper .main .bottom-wrapper__pag-next {
@@ -391,4 +397,59 @@
 
 .wrapper .main .bottom-wrapper__pag-prev:hover:not(:nth-child(6)) svg path, .wrapper .main .bottom-wrapper__pag-items__item:hover:not(:nth-child(6)) svg path, .wrapper .main .bottom-wrapper__pag-next:hover:not(:nth-child(6)) svg path {
   fill: #FFFFFF;
+}
+
+@media screen and (max-width: 1800px) {
+  .wrapper .main {
+    max-width: 1550px;
+  }
+  .wrapper .main .content-wrapper__table table {
+    min-width: 1500px;
+  }
+}
+
+@media screen and (max-width: 1600px) and (max-height: 800px) {
+  .wrapper .main .content-wrapper {
+    margin-top: 10px;
+    height: 560px;
+  }
+  .wrapper .main .content-wrapper__table {
+    margin: 20px auto 0 auto;
+  }
+  .wrapper .main .content-wrapper {
+    overflow-x: scroll;
+  }
+}
+
+@media screen and (max-width: 1560px) {
+  .wrapper .main {
+    max-width: 1500px;
+  }
+  .wrapper .main .content-wrapper__table table tbody tr td.first-th {
+    padding-top: 30px;
+  }
+}
+
+@media screen and (max-width: 1520px) {
+  .wrapper .main {
+    max-width: 1350px;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .wrapper .main {
+    max-width: 1280px;
+  }
+}
+
+@media screen and (max-height: 725px) {
+  .wrapper .main .header {
+    height: 75px;
+  }
+  .wrapper .main .content-wrapper {
+    height: 510px;
+  }
+  .wrapper .main .content-wrapper__table table tbody {
+    max-height: 460px;
+  }
 }

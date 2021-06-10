@@ -70,13 +70,15 @@
                         </svg>    
                     </div>
                     <div class="bottom-wrapper__pag-items">
-                        <div 
-                            class="bottom-wrapper__pag-items__item" 
-                            @click="pageNumber = page - 1"
-                            :class="{ active: page - 1 === pageNumber }"
-                            v-for="page in pageCount" 
-                            :key="page"
-                        >{{ page }}</div>
+                        <div class="paggination-wrapper" >
+                                <div 
+                                class="bottom-wrapper__pag-items__item" 
+                                @click="pageNumber = page - 1"
+                                :class="{ active: page - 1 === pageNumber }"
+                                v-for="page in pageCount" 
+                                :key="page"
+                            >{{ page }}</div>
+                        </div>
                     </div>
                     <div class="bottom-wrapper__pag-next" @click='nextPage'>
                         <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
