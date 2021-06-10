@@ -206,6 +206,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 40px;
 }
 
 .wrapper .main .content-wrapper__table table tbody tr td.first-th {
@@ -253,6 +254,49 @@
 .wrapper .main .content-wrapper__table table tbody tr td .total-pen {
   margin-left: 8px;
   cursor: pointer;
+}
+
+.wrapper .main .content-wrapper__table table tbody tr td .total-block {
+  display: flex;
+}
+
+.wrapper .main .content-wrapper__table table tbody tr td .change-total {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper .main .content-wrapper__table table tbody tr td .change-total input {
+  width: 80px;
+  background: #FFFFFF;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.04);
+  border-radius: 7px;
+  font-size: 20px;
+  padding: 8px 12px;
+  border: none;
+  outline: none;
+}
+
+.wrapper .main .content-wrapper__table table tbody tr td .status-block {
+  position: relative;
+  height: 100%;
+}
+
+.wrapper .main .content-wrapper__table table tbody tr td .status-block .change-status {
+  position: absolute;
+  top: -31%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.08);
+  border-radius: 7px;
+  height: 66px;
+  width: 500px;
+}
+
+.wrapper .main .content-wrapper__table table tbody tr td .status-block .change-status .status:not(:last-child) {
+  margin-right: 20px;
 }
 
 .wrapper .main .content-wrapper__table table tbody .status {

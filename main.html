@@ -61,7 +61,7 @@
             </div>
             <div class="bottom-wrapper">
                 <div class="bottom-wrapper__info">
-                    <p>Показаны {{ paginationData.length }} из {{ records.length }} записей</p>
+                    <p>Показаны {{ paginationData.length}} из {{ records.length }} записей</p>
                 </div>
                 <div class="bottom-wrapper__pag">
                     <div class="bottom-wrapper__pag-prev" @click='prevPage'>
@@ -77,8 +77,6 @@
                             v-for="page in pageCount" 
                             :key="page"
                         >{{ page }}</div>
-                        <!-- <div class="bottom-wrapper__pag-items__item etc">...</div>
-                        <div class="bottom-wrapper__pag-items__item">10</div> -->
                     </div>
                     <div class="bottom-wrapper__pag-next" @click='nextPage'>
                         <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -91,6 +89,7 @@
     </div>
     <!-- Vue JS -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    
     <script src="./scripts/main.js"></script>
     <script src="./scripts/dropdownList.js"></script>
 </body>
