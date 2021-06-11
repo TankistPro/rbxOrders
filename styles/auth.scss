@@ -10,8 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/img/l-tree.svg') bottom left no-repeat,
-                url('/img/r-tree.svg') bottom right no-repeat,
+    background: url('/img/pinguin.svg') top right 50px no-repeat,
                 rgb(255, 255, 255);
 
     .auth {
@@ -21,6 +20,7 @@
         background: #FFFFFF;
         box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.04);
         border-radius: 7px;
+        margin-right: 300px;
 
         &-block {
             height: 100%;
@@ -63,7 +63,7 @@
 
                     input {
                         width: 100%;
-                        border: 2px solid #069C38;
+                        border: 2px solid #E86F00;
                         box-sizing: border-box;
                         border-radius: 7px;
                         font-size: 20px;
@@ -104,7 +104,7 @@
                         height: 60px;
                         font-size: 25px;
                         text-transform: uppercase;
-                        background: #069C38;
+                        background: #E86F00;
                         border-radius: 10px;
                         border: none;
                         color: #FFFFFF;
@@ -113,5 +113,12 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .wrapper {
+        background: url('/img/pinguin.svg') top right -50px/700px no-repeat,
+                rgb(255, 255, 255);
     }
 }

@@ -9,10 +9,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/img/l-tree.svg') bottom left no-repeat,
-                url('/img/r-tree.svg') bottom right no-repeat,
+    background: url('/img/bg_main.svg') top left no-repeat,
                 rgb(255, 255, 255);
-                font-family: 'Gilroy', sans-serif;
+    font-family: 'Gilroy', sans-serif;
 
     .main {
         max-width: 1780px;
@@ -115,14 +114,14 @@
                             height: 100%;
                             border: none;
                             font-size: 20px;
-                            border-left: 1px solid #069c386e;
+                            border-left: 1px solid #E86F00;
                             padding-left: 20px;
                             font-family: 'Gilroy Medium', sans-serif;
                         }
     
                         img {
                             cursor: pointer;
-                            background-color:#069C38;
+                            background-color:#E86F00;
                             border-radius: 0 7px 7px 0;
                             padding: 0 13px;
                         }
@@ -360,7 +359,7 @@
 
                     &__item {
                         &.active {
-                            background: #069C38;
+                            background: #E86F00;
                             color: #FFFFFF;
 
                             svg path {
@@ -396,7 +395,7 @@
 
                     &:hover:not(:nth-child(6)) {
                         transition: .2s all;
-                        background: #069C38;
+                        background: #E86F00;
                         color: #FFFFFF;
 
                         svg path {

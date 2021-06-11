@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("/img/l-tree.svg") bottom left no-repeat, url("/img/r-tree.svg") bottom right no-repeat, white;
+  background: url("/img/bg_main.svg") top left no-repeat, white;
   font-family: 'Gilroy', sans-serif;
 }
 
@@ -119,14 +119,14 @@
   height: 100%;
   border: none;
   font-size: 20px;
-  border-left: 1px solid #069c386e;
+  border-left: 1px solid #E86F00;
   padding-left: 20px;
   font-family: 'Gilroy Medium', sans-serif;
 }
 
 .wrapper .main .header-wrapper .left-block__input img {
   cursor: pointer;
-  background-color: #069C38;
+  background-color: #E86F00;
   border-radius: 0 7px 7px 0;
   padding: 0 13px;
 }
@@ -356,7 +356,7 @@
 }
 
 .wrapper .main .bottom-wrapper__pag-items__item.active {
-  background: #069C38;
+  background: #E86F00;
   color: #FFFFFF;
 }
 
@@ -391,7 +391,7 @@
 
 .wrapper .main .bottom-wrapper__pag-prev:hover:not(:nth-child(6)), .wrapper .main .bottom-wrapper__pag-items__item:hover:not(:nth-child(6)), .wrapper .main .bottom-wrapper__pag-next:hover:not(:nth-child(6)) {
   transition: .2s all;
-  background: #069C38;
+  background: #E86F00;
   color: #FFFFFF;
 }
 
